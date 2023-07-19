@@ -99,10 +99,10 @@ def set_threshold(left_lane, right_lane, threshold, threshold_from_frame, center
 
     return l_threshold_x_bottom, l_threshold_x_top, r_threshold_x_bottom, r_threshold_x_top, cam_center_x
 # Load a model
-model = YOLO('/Users/joaquinarias/Documents/Jobs/DFKI/RoLand/YOLO/runs/segment/train/weights/best.pt')  # Load a custom model
+model = YOLO('/runs/segment/train/weights/best.pt')  # Load a custom model
 
 # Create VideoCapture object to read the input video
-video_capture = cv2.VideoCapture('/Users/joaquinarias/Downloads/webcam_lane.mp4')
+video_capture = cv2.VideoCapture('webcam_lane.mp4')
 
 save = False # Save the video
 threshold_from_frame = False # Take the threshold automatically from frame 
