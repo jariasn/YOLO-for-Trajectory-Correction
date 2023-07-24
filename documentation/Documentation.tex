@@ -496,4 +496,41 @@ distance = middle_x_bottom - cam_center_x
 
 The code can be tested by running \textbf{lane\_detection.py}. 
 
+\newpage
+\subsection{ROS Integration}
+The python script \textbf{lane\_detection\_camera.py} subscribes to the ros topic \textbf{/video\_frames}, then performs the lane detection on each frame and publishes three topics: \textbf{/visualization\_marker} that shows the middle part of the lane as a marker in RVIZ; \textbf{/lane\_state\_topic} that contains the position and orientation of the middle part; and \textbf{/processed\_video\_frames} which displays the image and the middle part of the lane together.
+
+\begin{center}
+\includegraphics[width=1.0\textwidth]{Bilder/rqt}
+\end{center}
+
+To test this subscriber, it is important to use the message \textbf{shivaa\_msgs/msg/LaneState.msg}. Then after properly building the package and sourcing in the root folder of the workspace, the python script can be run normally as:
+\begin{lstlisting}[language=csh]
+python3 path/to/lane_detection_camera.py
+\end{lstlisting}
+
+In another terminal, run 
+
+\begin{lstlisting}[language=csh]
+ros2 bag play /path/to/the/bag/files
+\end{lstlisting}
+
+Now RVIZ can be opened to visualize the marker and the processed video frames:
+
+\begin{center}
+\includegraphics[width=1.0\textwidth]{Bilder/visual_topics}
+\end{center}
+
+
+An example of the message from the \textbf{/lane\_state\_topic}  is:
+
+\begin{lstlisting}[language=csh]
+x: 254.0
+y: 479.0
+yaw: 2.398421334092504
+distance_from_center: -46.0
+\end{lstlisting}
+
+Where the distance from the center is in pixels and the negative sign means it is to the left. The yaw angle is in degrees.
+
 \end{document}

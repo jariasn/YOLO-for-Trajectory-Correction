@@ -1,0 +1,12 @@
+# A service call to carry out an inverse kinematics computation
+# The inverse kinematics request
+geometry_msgs/PoseStamped ik_request
+bool elbow_down
+
+---
+
+# The returned solution
+# (in the same order as the list of joints specified in the IKRequest message)
+sensor_msgs/JointState ik_solution
+
+shivaa_msgs/KinematicsStatus kinematics_status

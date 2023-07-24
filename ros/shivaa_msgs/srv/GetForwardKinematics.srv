@@ -1,0 +1,8 @@
+# A robot state consisting of joint names and joint positions to be used for forward kinematics
+sensor_msgs/JointState joint_state
+
+---
+# The resultant vector of PoseStamped messages that contains the (stamped) poses of the end-effector link
+geometry_msgs/PoseStamped fk_pose
+
+shivaa_msgs/KinematicsStatus kinematics_status

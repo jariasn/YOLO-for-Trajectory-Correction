@@ -1,0 +1,5 @@
+int32 SUCCESS=1
+int32 UNSET=0
+int32 NO_FK_SOLUTION=-98
+int32 NO_IK_SOLUTION=-99
+int32 status
