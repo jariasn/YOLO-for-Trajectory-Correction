@@ -29,6 +29,10 @@ Detailed explanation of the process of the project.
 
 Videos and images generated during the process.
 
+- #### ros
+
+Node that subscribes to the `/video_frames` topic to perform lane detection, and required package.
+
 - #### trials
 
 Different training results. Each `runs` directory has the `best.pt` model in `segment/train/weights` and the hyperparameters used for training in `segment/train/args.yaml`.
@@ -66,9 +70,3 @@ pip install -r requirements.txt
 7. Use the trained model for lane detection and orientation calculation.
 8. Test the `lane_detection.py` script to see the final results.
 
-
-## Acknowledgments
-
-- The YOLOv8 algorithm was implemented based on the work of Joseph Redmon and Ali Farhadi.
-- The lane detection and orientation calculation code were developed by Joaquin Arias.
-- Thanks to the Supervisely Platform for providing a free powerful image labeling solution.
